@@ -1,0 +1,42 @@
+<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+
+<script>
+$(document).ready(function(){
+	
+	$.ajax({
+      type: "POST",
+      url: "action.php",
+      dataType: "json",
+    
+	 success: function (response) {
+        var trHTML = '';
+        $.each(response, function (i, item) {
+            trHTML += '<tr><td>' + item.ID + '</td><td>' + item.ID_ORDER + '</td><td>' + item.ID_CONFIRM + '</td></tr>';
+        });
+        $('#records_table').append(trHTML);
+    },
+  
+});
+	
+});
+</script>
+
+
+<body>
+
+<table id="records_table" border='1' align='center'>
+    <tr>
+        <th>ID</th>
+        <th>ID ORDER</th>
+        <th>ID CONFIRM</th>
+    </tr>
+</table>
+
+<!--div id="firstname" align="center">
+
+</div-->
+
+</body>
+
+
+

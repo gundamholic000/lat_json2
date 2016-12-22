@@ -1,0 +1,63 @@
+<html>
+   
+   
+   <head>
+      <!-- <script src="//code.jquery.com/jquery-1.12.3.js"></script>
+      <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script> -->
+	  
+	  <script src="jqtable/jquery-1.12.3.js"></script>
+      <script src="jqtable/jquery.dataTables.min.js"></script>
+	  
+	  
+	  <script>
+	  $(document).ready(function(){
+	     //alert('x');
+		 
+		  $('#example').DataTable({
+			
+			//"ajax": 'data.json'
+			"scrollY": 500,
+		  
+		    "ajax": {
+				//"url": "data.json",
+				"url": "action.php",
+				"dataSrc": ""
+			},
+			"columns": [
+				{ "data": "ID" },
+				{ "data": "ID_ORDER" },
+				{ "data": "ID_CONFIRM" },
+			
+			]
+		    
+		  });
+	  
+	  });
+	  
+	  </script>
+   <link rel="stylesheet" type="text/css" href="jqtable/jquery.dataTables.min.css">
+   </head>
+   
+   <body>
+   
+   <table id="example"class="display" cellspacing="0" width="100%">
+     <thead>	
+		<tr>
+			<th>ID</th>
+			<th>ID ORDER</th>
+			<th>ID CONFIRM</th>
+		</tr>
+	 </thead>
+	 <tfoot>
+		<tr>
+			<th>ID</th>
+			<th>ID ORDER</th>
+			<th>ID CONFIRM</th>
+		</tr>
+	 </tfoot>
+</table>
+   
+   
+   </body>
+
+</html>

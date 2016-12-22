@@ -1,0 +1,45 @@
+<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+
+<script>
+$(document).ready(function(){
+	
+	var jos = "dari getJSON";
+	
+	/*$.getJSON("action.php", function(data){*/
+	$.getJSON("action.php", function(data){
+	
+//	     alert(data);
+//		 alert(JSON.stringify(data));
+		
+                    var trHTML = '';
+                    $.each(data, function (i, item) {
+                            trHTML += '<tr><td>' + item.ID + '</td><td>' + item.ID_ORDER + '</td><td>' + item.ID_CONFIRM + '</td></tr>';
+                    });
+                    $('#records_table').append(trHTML);
+
+	});
+
+	
+});
+</script>
+
+
+<body>
+
+<table id="records_table" border='1' align='center'>
+    <tr>
+	   <th colspan="3">Menggunakan Metode $.getJSON</th>
+	</tr>
+	<tr>
+        <th>ID</th>
+        <th>ID ORDER</th>
+        <th>ID CONFIRM</th>
+    </tr>
+</table>
+
+
+
+</body>
+
+
+

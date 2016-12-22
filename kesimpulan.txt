@@ -1,0 +1,7 @@
+kesimpulan
+
+$.post,  $.get, bisa ambil data baik array maupun JSON, tergantung convertnya
+
+$.getJSON hanya bisa data bentuk JSON
+
+$.semuanya bisa lempar variabel juga
