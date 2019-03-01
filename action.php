@@ -15,14 +15,12 @@ $hasil = mysqli_query($mysqli, $sql);
 
 foreach($hasil as $row){
 	
-			$results[] = array(
-					'ID'=> $row[Id],
-					'ID_ORDER' => $row[ID_ORDER],
-					'ID_CONFIRM' => $row[ID_CONFIRM],
+    $results[] = array(
+	'ID'=> $row[Id],
+	'ID_ORDER' => $row[ID_ORDER],
+	'ID_CONFIRM' => $row[ID_CONFIRM],
 
-			);
-			
-	
+    );
 }
 
 //var_dump($results);

@@ -1,36 +1,39 @@
-<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+<html>
+    
+    <head>
+    <!--<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">-->
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
 
-<script>
-$(document).ready(function(){
-	
-		//var jos = "dari get";
-		
-		
-	//$.get("action.php", function(data){
-		$.get("action.php", function(data){
-		
-	
-	    alert(data);
-		alert(JSON.stringify(data));
-		
-		//var i = $.parseJSON(data); 
-		
-		  var trHTML = '';
-			  $.each(data, function (i, item) {
-				  trHTML += '<tr><td>' + item.ID + '</td><td>' + item.ID_ORDER + '</td><td>' + item.ID_CONFIRM + '</td></tr>';
-			  });
-			  $('#records_table').append(trHTML);
-	
-	});
+        <script>
+        $(document).ready(function(){
 
-	
-});
-</script>
+        //	$('#example').DataTable( {
+        //        "ajax": '../ajax/data/arrays.txt'
+        //         });
+
+                $.get("action.php", function(data){
+
+                //var i = $.parseJSON(data); 
+
+                          var trHTML = '';
+                            $.each(data, function (i, item) {
+                                    trHTML += '<tr><td>' + item.ID + '</td><td>' + item.ID_ORDER + '</td><td>' + item.ID_CONFIRM + '</td></tr>';
+                            });
+                            $('#example').append(trHTML);
+
+                });
+
+
+        });
+        </script>
+    </head>
+
 
 
 <body>
 
-<table id="records_table" border='1' align='center'>
+<!--<table id="records_table" border='1' align='center'>-->
+<table id="example" border='1' align='center'>
         <tr>
             <th colspan="3">Menggunakan Metode $.get</th>
             </tr>

@@ -1,5 +1,5 @@
 <?php
 
 
-$mysqli = mysqli_connect("localhost","root","","distributor_kokola") or die('gagalx');
+$mysqli = mysqli_connect("localhost","root","septiyo23","tes_json") or die('gagalx');
 ?>
