@@ -1,42 +1,45 @@
 <html>
     
     <head>
-  
-    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
-
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">    
+    <!--<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>-->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    
         <script>
         $(document).ready(function(){
+            
+            
+            	  $('#example').DataTable({
+			
+			//"ajax": 'data.json'
+			"scrollY": 500,
+		  
+		    "ajax": {
+				//"url": "data.json",
+				"url": "action.php",
+				"dataSrc": ""
+			},
+                    "columns": [
+				{ "data": "ID" },
+				{ "data": "ID_ORDER" },
+				{ "data": "ID_CONFIRM" },
+			
+                               ]
+		    
+		  });
 
-                $.ajax({ 
-                    type: 'GET', 
-                    //url: 'action.php', 
-                    url: 'data.json', 
-                     
-                    dataType: 'json',
-                    success: function(data) { 
-           
-                           var trHTML = '';
-                              $.each(data, function (i, item) {
-                              trHTML += '<tr><td>' + item.ID + 
-                                        '</td><td>' + item.ID_ORDER +
-                                        '</td><td>' + item.ID_CONFIRM +
-                                        '</td><td><a href=edit.php?ID='+item.ID+'>EDIT<a> | <a href=delete.php?ID=' + item.ID + '>DELETE<a>' 
-                                        '</td></tr>';
-                            });
-                           $('#example').append(trHTML);
-                    }
-                });
-
-
-
-        });
+              
+            });
         </script>
     </head>
 
 
 <body>
 <!--<table id="records_table" border='1' align='center'>-->
-<table id="example" border='1' align='center'>
+<table id="example" border='1' align='center' style="width:70%">
+        <thead>
         <tr>
             <th colspan="4">Menggunakan Metode Ajax Call</th>
             </tr>
@@ -44,8 +47,9 @@
             <th>ID</th>
             <th>ID ORDER</th>
             <th>ID CONFIRM</th>
-            <th>ACTION</th>
+<!--            <th>ACTION</th>-->
         </tr>
+        </thead>
 </table>
 
 

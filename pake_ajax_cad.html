@@ -1,0 +1,56 @@
+<html>
+    
+    <head>
+  
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+
+        <script>
+        $(document).ready(function(){
+
+                $.ajax({ 
+                    type: 'GET', 
+                    //url: 'action.php', 
+                    url: 'data.json', 
+                     
+                    dataType: 'json',
+                    success: function(data) { 
+           
+                           var trHTML = '';
+                              $.each(data, function (i, item) {
+                              trHTML += '<tr><td>' + item.ID + 
+                                        '</td><td>' + item.ID_ORDER +
+                                        '</td><td>' + item.ID_CONFIRM +
+                                        '</td><td><a href=edit.php?ID='+item.ID+'>EDIT<a> | <a href=delete.php?ID=' + item.ID + '>DELETE<a>' 
+                                        '</td></tr>';
+                            });
+                           $('#example').append(trHTML);
+                    }
+                });
+
+
+
+        });
+        </script>
+    </head>
+
+
+<body>
+<!--<table id="records_table" border='1' align='center'>-->
+<table id="example" border='1' align='center'>
+        <tr>
+            <th colspan="4">Menggunakan Metode Ajax Call</th>
+            </tr>
+            <tr>
+            <th>ID</th>
+            <th>ID ORDER</th>
+            <th>ID CONFIRM</th>
+            <th>ACTION</th>
+        </tr>
+</table>
+
+
+
+</body>
+
+
+
