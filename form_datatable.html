@@ -27,8 +27,17 @@
 				{ "data": "ID" },
 				{ "data": "ID_ORDER" },
 				{ "data": "ID_CONFIRM" },
+				{ "data": "ID_CONFIRM" },
 			
-			]
+			],
+                        buttons: [
+                                {
+                                  text: 'Link Button',
+                                  action: function ( e, dt, button, config ) {
+                                    window.location = 'linkpage.php';
+                                  }        
+                                }
+                            ]
 		    
 		  });
 	  
@@ -46,15 +55,16 @@
 			<th>ID</th>
 			<th>ID ORDER</th>
 			<th>ID CONFIRM</th>
+			<th>ACTION</th>
 		</tr>
 	 </thead>
-	 <tfoot>
+<!--	 <tfoot>
 		<tr>
 			<th>ID</th>
 			<th>ID ORDER</th>
 			<th>ID CONFIRM</th>
 		</tr>
-	 </tfoot>
+	 </tfoot>-->
 </table>
    
    

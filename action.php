@@ -8,7 +8,8 @@ ini_set('display_errors', '0');
 echo json_encode($res); */
 
 
-$sql = "SELECT * FROM order_confirm";
+//$sql = "SELECT * FROM order_confirm";
+$sql = "SELECT * FROM order_confirm where LINK IS NOT NULL";
 $hasil = mysqli_query($mysqli, $sql);
 //$results = array();
 
@@ -19,6 +20,7 @@ foreach($hasil as $row){
 	'ID'=> $row[Id],
 	'ID_ORDER' => $row[ID_ORDER],
 	'ID_CONFIRM' => $row[ID_CONFIRM],
+        'LINK'=> $row[LINK],
 
     );
 }
